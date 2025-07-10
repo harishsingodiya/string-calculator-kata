@@ -3,18 +3,15 @@ function add(numbers) {
 
   let delimiter = /,|\n/; // default delimiters: comma or newline
 
-  if (!numbers.includes(",") && !numbers.includes("\n")) return parseInt(numbers);
+  
+  const parts = numbers.split(delimiter).map(Number);
+  const negatives = parts.filter(n => n < 0);
 
-  const numArray = numbers.split(delimiter).map(Number);
-
-  const negativeNumbers = numArray.filter((n) => n < 0);
-  if (negativeNumbers.length > 0) {
-    throw new Error(
-      `negative numbers not allowed ${negativeNumbers.join(",")}`
-    );
+  if (negatives.length > 0) {
+    throw new Error(`negative numbers not allowed ${negatives.join(",")}`);
   }
 
-  return numArray.reduce((sum, num) => sum + num, 0);
+  return parts.reduce((sum, num) => sum + num, 0);
 }
 
 module.exports = add;
