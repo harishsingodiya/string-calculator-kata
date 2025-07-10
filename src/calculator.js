@@ -3,6 +3,8 @@ function add(numbers) {
 
   let delimiter = /,|\n/; // default delimiters: comma or newline
 
+  if (!numbers.includes(",") && !numbers.includes("\n")) return parseInt(numbers);
+
   const numArray = numbers.split(delimiter).map(Number);
 
   const negativeNumbers = numArray.filter((n) => n < 0);
