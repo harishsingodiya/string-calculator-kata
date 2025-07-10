@@ -21,6 +21,18 @@ describe("String Calculator", () => {
     expect(add("1\n2,3")).toBe(6);
   });
 
+  test("supports custom delimiter", () => {
+    expect(add("//;\n1;2")).toBe(3);
+  });
+
+  test("supports multi-character delimiters in brackets", () => {
+    expect(add("//[***]\n1***2***3")).toBe(6);
+  });
+
+  test("supports multiple delimiters", () => {
+    expect(add("//[*][%]\n1*2%3")).toBe(6);
+  });
+
   test("throws error for negative numbers", () => {
     expect(() => add("1,-2,-5")).toThrow("negative numbers not allowed -2,-5");
   });
