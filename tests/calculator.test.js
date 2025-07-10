@@ -1,5 +1,11 @@
-const add = require('../src/calculator');
+const add = require("../src/calculator");
 
-test('returns 0 for empty string', () => {
-  expect(add("")).toBe(0);
+describe("String Calculator", () => {
+  test("returns 0 for empty string", () => {
+    expect(add("")).toBe(0);
+  });
+
+  test("throws error for negative numbers", () => {
+    expect(() => add("1,-2,-5")).toThrow("negative numbers not allowed -2,-5");
+  });
 });
