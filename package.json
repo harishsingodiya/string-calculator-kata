@@ -1,0 +1,24 @@
+{
+  "name": "string-calculator-kata",
+  "version": "1.0.0",
+  "description": "This is my solution for the \"String Calculator TDD Kata\" using JavaScript and Jest. The project follows TDD principles strictly with tests written first. All requirements including custom delimiters, newline handling, and error throwing for negative numbers are implemented and tested.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/harishsingodiya/string-calculator-kata.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/harishsingodiya/string-calculator-kata/issues"
+  },
+  "homepage": "https://github.com/harishsingodiya/string-calculator-kata#readme",
+  "devDependencies": {
+    "jest": "^30.0.4"
+  }
+}
